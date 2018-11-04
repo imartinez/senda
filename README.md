@@ -81,10 +81,8 @@ If it is not working, have a look at the logs
 
     $ heroku logs --tail
 
-For more info:
+For more info [medium link](https://medium.com/firehydrant-io/developing-a-ruby-on-rails-app-with-docker-compose-d75b20334634).
 
-    [medium link](https://medium.com/firehydrant-io/developing-a-ruby-on-rails-app-with-docker-compose-d75b20334634)
-    
 
 ### Network analysis installation
 
