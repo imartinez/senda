@@ -33,15 +33,15 @@ And then run the application:
 
 If using Docker, make sure to build the image first:
 
-    $ docker compose build
+    $ docker-compose build
 
 Then set up the database:
 
-    $ docker compose run --rm onodo bundle exec rake db:create db:migrate db:seed
+    $ docker-compose run --rm onodo bundle exec rake db:create db:migrate db:seed
 
 And finally start the application:
 
-    $ docker compose up
+    $ docker-compose up
 
 To access the running application go to your browser and visit http://localhost:3000.
 
@@ -50,6 +50,41 @@ In development mode, any changes made in the source code (except for initializer
 If you're using Docker and you fancy opening a shell into the running container to execute anything locally, you can do it by issuing:
 
     $ docker compose exec onodo bash
+
+### Deploy to Heroku
+
+Follow the [docs](https://devcenter.heroku.com/articles/container-registry-and-runtime) to the `heroku container:release web` step. It will create the app in Heroku and release the frontend.
+
+Access your Heroku project dashboard. Configure env vars:
+
+    LISTEN_ON  0.0.0.0:8000
+    WORKER_PROCESSES  1 (or more, thats your call)
+    SECRET_KEY_BASE  <whatever_secret_you_decide>
+
+Next, since Heroku doesn’t assume our application type (since it’s just a Docker image), we need to setup a postgres database manually using:
+
+    $ heroku addons:create heroku-postgresql:hobby-dev
+
+And prepare the database
+
+    $ heroku run rake db:create db:migrate db:seed
+
+Restart the app
+
+    $ heroku restart
+
+And open it
+
+    $ heroku open
+
+If it is not working, have a look at the logs
+
+    $ heroku logs --tail
+
+For more info:
+
+    [medium link](https://medium.com/firehydrant-io/developing-a-ruby-on-rails-app-with-docker-compose-d75b20334634)
+    
 
 ### Network analysis installation
 

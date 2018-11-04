@@ -41,4 +41,5 @@ RUN DB_ADAPTER=nulldb bundle exec rake assets:precompile
 
 EXPOSE 3000
 
-CMD ["bundle", "exec", "unicorn", "-c", "config/unicorn.rb"]
+CMD bundle exec unicorn -p $PORT -c config/unicorn.rb
+#CMD ["bundle", "exec", "unicorn", "-c", "config/unicorn.rb"]
