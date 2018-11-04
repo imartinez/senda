@@ -247,13 +247,13 @@ $node-color-12: #e0deda;
       font-weight: 300;
       text-align: center;
     }
-   
+
     .node{
       cursor: pointer;
       stroke-width: 20px;
       stroke-opacity: 0;
       paint-order: stroke;
-     
+
       &.active{
         stroke-opacity: 0.4;
       }
@@ -336,7 +336,7 @@ $node-color-12: #e0deda;
         }
       }
 
-      
+
 
       &.size-1{
         fill: lighten( $gray-dark, 10% );
@@ -588,7 +588,7 @@ $node-color-12: #e0deda;
     border-color: $gray-lighter;
     @include box-shadow( 0 0 10px rgba(0, 0, 0, 0.2) );
   }
-  
+
   .panel-heading{
     color: $gray;
     border-radius: 0;
@@ -978,7 +978,7 @@ $node-color-12: #e0deda;
       font-weight: 300;
 
       // Custom Fields Table
-      .table{ 
+      .table{
         > tbody{
           border-bottom: 1px solid $table-border-color;
 
@@ -998,8 +998,8 @@ $node-color-12: #e0deda;
   }
 
   @media (min-width: $screen-sm-min) {
-    right: -360px;
-    max-width: 350px;
+    right: -410px;
+    max-width: 400px;
   }
 }
 
@@ -1908,7 +1908,7 @@ body.pages.demo{
 // Demo Popover
 .popover-demo{
   z-index: 1040;
-  
+
   .popover-title{
     color: $brand-primary;
     font-size: 18px;
